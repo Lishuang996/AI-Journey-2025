@@ -1,2 +1,10 @@
+# 忽略LaTeX生成的文件
 *.pdf
 *.synctex.gz
+
+# 忽略VSCode生成的文件
+.vscode/
+
+# 忽略编译生成的可执行文件
+code/luogu/*
+!code/luogu/*.cpp
