@@ -1,0 +1,31 @@
+\documentclass[UTF8, 12pt]{article} % 使用12pt字体大小以避免小数点后的问题
+\usepackage{ctex}
+\usepackage{amsmath}
+\usepackage{lmodern} % 使用Latin Modern字体，它有更好的字体大小支持
+\usepackage{unicode-math} % 如果需要更好的数学符号支持
+\usepackage{geometry}
+\title{笔记：排列与逆序}
+\author{李爽}
+\date{\today}
+\geometry{a4paper,left=2cm,right=2cm,top=0cm,bottom=0cm}
+\begin{document}
+
+\maketitle
+\section{定义}
+$n$级排列：由$1,2,\cdots,n$组成的一个有序数组。
+例如：$123$,$321$,$213$,$231$,$312$,$132$，就被成为3级排列。
+
+$1,2,\cdots,n$的排列有$n!$个。
+
+$12\cdots n$被称为$n$级自然排列。
+
+逆序数：一个排列中逆序对个数。记为$N(i_1 i_2 \cdots i_n)$或$\tau (i_1 i_2 \cdots i_n)$
+
+奇排列：逆序数是奇数的排列。
+
+偶排列：逆序数是偶数的排列。
+
+对换：将其中的两个数进行交换。
+每做一次对换，奇偶性改变一次。
+
+\end{document}
