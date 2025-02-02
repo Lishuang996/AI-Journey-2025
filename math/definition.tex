@@ -1,0 +1,176 @@
+\documentclass[UTF8, 12pt]{article} % 使用12pt字体大小以避免小数点后的问题
+\usepackage{ctex}
+\usepackage{amsmath}
+\usepackage{lmodern} % 使用Latin Modern字体，它有更好的字体大小支持
+\usepackage{unicode-math} % 如果需要更好的数学符号支持
+
+\title{笔记：二阶行列式和三阶行列式的定义}
+\author{李爽}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{定义}
+有以下一个方程组：
+\begin{equation*}
+\left\{
+    \begin{aligned}
+        &3x + 4y = 5 \\
+        &7x + 9y = 11 \\
+    \end{aligned}
+\right.
+\end{equation*}
+
+
+解出来的是：
+$$
+x=\frac{5\times9-4\times11}{3\times9-4\times7}
+$$
+
+$$
+y=\frac{3\times11-5\times7}{3\times9-4\times7}
+$$
+
+
+观察可知，$x$和$y$的解都可以表示为两个数相乘减两个数相乘。
+为了表示方便，引出了另一个符号，即二阶行列式。
+
+
+$$
+\begin{vmatrix}
+    a & b \\
+    c & d
+\end{vmatrix}
+=a \times d - b \times c
+$$
+
+
+因此，$x$和$y$的解都可以表示为：
+$$
+x=\frac{\begin{vmatrix}
+    5 & 4 \\
+    11 & 9
+\end{vmatrix}}{\begin{vmatrix}
+    3 & 4 \\
+    7 & 9
+\end{vmatrix}}
+$$
+$$
+y=\frac{\begin{vmatrix}
+    3 & 5 \\
+    7 & 11
+\end{vmatrix}}{\begin{vmatrix}
+    3 & 4 \\
+    7 & 9
+\end{vmatrix}}
+$$
+
+
+\section{克莱姆法则：快速求解二元一次方程}
+现有以下一个方程组：
+$$
+\left\{
+    \begin{aligned}
+    &a_1 x + b_1 y=c_1\\
+    &a_2 x + b_2 y=c_2
+    \end{aligned}
+\right.
+$$
+
+其中，$a_1,b_1,c_1,a_2,b_2,c_2$都是常数。
+
+
+$$
+x=\frac{
+    \begin{vmatrix}
+        c_1 & b_1 \\
+        c_2 & b_2
+    \end{vmatrix}
+}{
+    \begin{vmatrix}
+        a_1 & b_1 \\
+        a_2 & b_2
+    \end{vmatrix}
+}
+\indent
+y=\frac{
+    \begin{vmatrix}
+        a_1 & c_1 \\
+        a_2 & c_2
+    \end{vmatrix}
+}{
+    \begin{vmatrix}
+        a_1 & b_1 \\
+        a_2 & b_2
+    \end{vmatrix}
+}
+$$
+
+
+\section{二阶行列式的定义}
+$$
+\begin{vmatrix}
+    a_{11}&a_{12}\\
+    a_{21}&a_{22}
+\end{vmatrix}
+=a_{11}a_{22}-a_{12}a_{21}
+$$
+
+$a_{ij}$被称为一个\textbf{元素}。
+$i$是\textbf{行}，$j$是\textbf{列}。
+从行列式的左上角到右下角被称为\textbf{主对角线}，
+右上角到左下角被称为\textbf{副对角线}。
+对角线方向相乘并相减被称为\textbf{对角线法则}。
+
+\section{三阶行列式的定义}
+三阶行列式可表示为:
+$$
+\begin{vmatrix}
+    a_{11}&a_{12}&a_{13}\\
+    a_{21}&a_{22}&a_{23}\\
+    a_{31}&a_{32}&a_{33}
+\end{vmatrix}
+$$
+
+三阶行列式计算方法为：
+
+原式$=a_{11}a_{22}a_{33}+a_{12}a_{23}a_{31}+a_{13}a_{21}a_{32}-a_{13}a_{22}a_{31}-a_{11}a_{23}a_{32}-a_{12}a_{21}a_{33}$
+
+\subsection{上三角行列式}
+如下所示的行列式就被称为上三角行列式。空白区域都是0。
+$$
+\begin{vmatrix}
+    a_{11}&a_{12}&a_{13}\\
+          &a_{22}&a_{23}\\
+          &      &a_{33}
+\end{vmatrix}
+$$
+
+此时原式$=a_{11}a_{22}a_{33}$
+
+\subsection{下三角行列式}
+下三角行列式如下所示，空白区域都是0。
+$$
+\begin{vmatrix}
+    a_{11}&        &        \\
+    a_{21}&a_{22}  &        \\
+    a_{31}&a_{32}  &a_{33}
+\end{vmatrix}
+$$
+
+同上三角行列式，此时原式$=a_{11}a_{22}a_{33}$
+
+\subsection{主对角线行列式}
+主对角线行列式如下所示，空白区域都是0。
+$$
+\begin{vmatrix}
+    a_{11}&        &        \\
+          &a_{22}  &        \\
+          &        &a_{33}
+\end{vmatrix}
+$$
+
+同上三角行列式，此时原式$=a_{11}a_{22}a_{33}$
+\end{document}
