@@ -1,0 +1,32 @@
+\documentclass[UTF8, 12pt]{article} % 使用12pt字体大小以避免小数点后的问题
+\usepackage{ctex}
+\usepackage{amsmath}
+\usepackage{lmodern} % 使用Latin Modern字体，它有更好的字体大小支持
+\usepackage{unicode-math} % 如果需要更好的数学符号支持
+\usepackage{geometry}
+\title{笔记：n阶行列式}
+\author{李爽}
+\date{\today}
+\geometry{a4paper,left=2cm,right=2cm,top=0cm,bottom=2cm}
+\begin{document}
+
+\maketitle
+\section{定义}
+$$
+\begin{vmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn}
+\end{vmatrix}
+$$
+
+像上面那种就被称为n阶行列式。为了方便，$n$阶行列式可以简记为:$|a_{ij}|$
+
+\section{计算}
+\subsection{按行展开}
+
+原式$=\sum_{j_1 j_2 \cdots j_n} (-1)^{N(j_1 j_2 \cdots j_n)} a_1 a_{j_1} a_2 a_{j_2} \cdots a_n a_{j_n}$
+
+
+\end{document}
